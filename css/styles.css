@@ -1,7 +1,7 @@
 /*basic styles*/
 @font-face {
   font-family: myfont;
-  src: url(sansation_light.woff);
+  src: url(fonts/BebasNeue-Regular.ttf);
 }
 
 html {
