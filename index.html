@@ -6,16 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Super Swaggy Portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/glightbox.min.css" />
   </head>
   <body>
     <header class="hero-box">
       <section class="hero-img-box">
-        <img class="hero-img" src="img/jojo.jpg" alt="cute doggy picture :)" />
+        <img class="hero-img" src="img/pic8.jpeg" alt="cute doggy picture :)" />
       </section>
       <section class="hero-text-box">
         <h1 class="hero-heading">My Super Swaggy Portfolio</h1>
         <p class="hero-text">Hello future Haley!</p>
       </section>
     </header>
+    <!-- Begin Portfolio Gallery-->
+    <section class="portfolio-container">
+      <h1>Portfolio</h1>
+      <section class="portfolio-gallery">
+        <div class="gallery-item">
+          <a class="glightbox" href="img/20211011 Color Aid 2 Photo 2.jpg">
+            <img
+              class="gallery-img"
+              src="img/20211011 Color Aid 2 Photo 2.jpg"
+              alt="Color Aid Cup"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a class="glightbox" href="img/20211011 Color Aid Cup Photo 2.jpg">
+            <img
+              class="gallery-img"
+              src="img/20211011 Color Aid Cup Photo 2.jpg"
+              alt="Color Aid Cup alt colors"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a class="glightbox" href="img/20211011 ColorAid Color Wheel 2.jpg">
+            <img
+              class="gallery-img"
+              src="img/20211011 ColorAid Color Wheel 2.jpg"
+              alt="Color Aid Color Wheel"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a
+            class="glightbox"
+            href="img/20211011 ColorProgression Practice Photo 2.jpg"
+          >
+            <img
+              class="gallery-img"
+              src="img/20211011 ColorProgression Practice Photo 2.jpg"
+              alt="Color Progression Practice"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a class="glightbox" href="img/20211011 Pop Of Color Photo 2.jpeg">
+            <img
+              class="gallery-img"
+              src="img/20211011 Pop Of Color Photo 2.jpeg"
+            />
+            alt="Pop of Color Bird" /></a
+          >
+        </div>
+        <div class="gallery-item">
+          <a
+            class="glightbox"
+            href="img/20211011 UrbanPatternProgression Photo 2.jpg"
+          >
+            <img
+              class="gallery-img"
+              src="img/20211011 UrbanPatternProgression Photo 2.jpg"
+              alt="Urban Pattern Progression"
+          /></a>
+        </div>
+      </section>
+    </section>
+    <script src="js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({ loop: true });
+    </script>
   </body>
 </html>

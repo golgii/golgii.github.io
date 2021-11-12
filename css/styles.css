@@ -50,18 +50,19 @@ img {
 
 .hero-img-box::after {
   content: "";
-  height: 100%;
+  height: 100vh;
   width: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(104, 104, 104, 0.4);
 }
 
 hero-img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .hero-text-box {
@@ -85,6 +86,37 @@ hero-img {
   color: white;
 }
 
+.portfolio-container {
+  margin: 1rem auto 0 auto;
+}
+
+.portfolio-container h1 {
+  font-size: 10rem;
+  line-height: 2rem;
+  color: darkseagreen;
+}
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 4rem;
+  grid-auto-rows: 300px;
+}
+
+.gallery-item {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-img {
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
+.gallery-img:hover {
+  transform: scale(1.5);
+}
 /* Media Queries Below */
 @media (min-width: 600 px) {
   .hero-heading {
@@ -92,6 +124,12 @@ hero-img {
     line-height: 18rem;
     color: red;
   }
-}
-@media (min-width: 920px) {
+  .hero-text {
+    font-size: 10rem;
+    line-height: 10rem;
+  }
+  .portfolio-container h1 {
+    font-size: 10rem;
+    line-height: 5rem;
+  }
 }
