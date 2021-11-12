@@ -1,4 +1,9 @@
 /*basic styles*/
+@font-face {
+  font-family: myfont;
+  src: url(sansation_light.woff);
+}
+
 html {
   font-size: 100%;
   line-height: 1.5rem;
@@ -89,9 +94,10 @@ img {
 .hero-heading {
   font-size: 3rem;
   line-height: 3rem;
-  color: white;
+  color: rgb(241, 247, 244);
   text-transform: uppercase;
   font-weight: bold;
+  font-family: myfont;
 }
 
 .hero-text {
