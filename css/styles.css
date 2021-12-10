@@ -34,6 +34,103 @@ img {
 
 /* End Basic Styles */
 
+/* Begin Nav Styles */
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.logo,
+.nav-menu {
+  text-transform: uppercase;
+}
+
+.logo,
+.nav-item {
+  white-space: nowrap;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 33.3%;
+  text-align: center;
+}
+
+.social-nav-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 10%;
+}
+
+.logo a,
+.nav-menu a {
+  display: block;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+  padding: 0.8rem;
+  color: #000;
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.nav-menu a {
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.nav-menu a:hover {
+  border-bottom: 1px solid #000;
+}
+
+.top-nav {
+  background: none;
+  grid-column: 1/ -1;
+  grid-row: 1 / -1;
+  align-content: top;
+  position: fixed;
+  top: 0;
+  height: 8rem;
+  font-size: medium;
+}
+
+@supports (position: sticky) {
+  .top-nav {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.top-nav .logo a,
+.top-nav .nav-menu a {
+  color: white;
+  font-size: 80px;
+}
+
+.top-nav .nav-menu a:hover {
+  border-bottom: 1px solid #fff;
+}
+
 /*Begin Hero Styles */
 
 .hero-box {
@@ -47,6 +144,7 @@ img {
   height: 100%;
   width: 100%;
 }
+
 .hero-image-box {
   height: 100vh;
   width: 100%;
@@ -65,12 +163,21 @@ img {
   background-color: rgba(104, 104, 104, 0.4);
 }
 
-.hero-image {
+.hero-image,
+.hero-video {
   display: grid;
   width: 100%;
   height: 100%;
   object-fit: cover;
   overflow: hidden;
+}
+
+.hero-video {
+  background-color: black;
+  background-image: url("../img/ocean.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-text-box {
@@ -85,10 +192,9 @@ img {
 .hero-heading {
   font-size: 3rem;
   line-height: 3rem;
-  color: rgb(241, 247, 244);
+  color: white;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: myfont;
 }
 
 .hero-text {
@@ -97,25 +203,28 @@ img {
 }
 
 .portfolio-container {
-  margin: 1rem auto 0 auto;
+  margin: 1rem 1rem;
 }
 
 .portfolio-container h1 {
   font-size: 2rem;
   line-height: 2rem;
-  color: darkseagreen;
+  color: green;
 }
 
 .portfolio-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(900px, 2fr));
   grid-gap: 0.5rem;
-  grid-auto-rows: 300px;
+  grid-auto-rows: 900px;
 }
+
 .gallery-item {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  position: relative;
+  text-align: left;
 }
 
 .gallery-img {
@@ -127,10 +236,12 @@ img {
 .gallery-img:hover {
   transform: scale(1.5);
 }
+
 .about-container {
   display: grid;
   grid-template-columns: 1fr;
-  margin: 1rem auto 0 auto;
+  grid-auto-rows: 1000px;
+  grid-gap: 1.5rem;
 }
 
 .about-text {
@@ -166,11 +277,10 @@ img {
 
 /* Media Queries Below */
 
-@media (min-width: 600 px) {
+@media (min-width: 600px) {
   .hero-heading {
     font-size: 4rem;
     line-height: 4rem;
-    color: red;
   }
   .hero-text {
     font-size: 2.5rem;
@@ -186,18 +296,17 @@ img {
     grid-gap: 1rem;
   }
   .about-text h1 {
-    font-size: 4rem;
     line-height: 4rem;
   }
   .about-text p {
-    font-size: 1.2rem;
     line-height: 1.6rem;
   }
   .about-social a {
     font-size: 3rem;
   }
 }
-@media (min-width: 920px) {
+
+@media (min-width: 900px) {
   .hero-heading {
     font-size: 9rem;
     line-height: 9rem;
@@ -207,7 +316,6 @@ img {
     line-height: 4rem;
   }
   .portfolio-container {
-    max-width: 1400px;
   }
   .portfolio-container h1 {
     font-size: 6rem;
@@ -217,11 +325,9 @@ img {
     max-width: 1400px;
   }
   .about-text h1 {
-    font-size: 6rem;
     line-height: 6rem;
   }
   .about-text p {
-    font-size: 1.8rem;
     line-height: 2.1rem;
   }
   .about-social a {
