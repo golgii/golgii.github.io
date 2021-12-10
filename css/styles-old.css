@@ -1,22 +1,15 @@
-/* basic styles */
+/*basic styles*/
+@font-face {
+  font-family: myfont;
+  src: url(fonts/BebasNeue-Regular.ttf);
+}
+
 html {
   font-size: 100%;
   line-height: 1.5rem;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion) {
-  html {
-    scroll-behavior: initial;
-  }
-}
-
-.section-scroll {
-  scroll-margin-top: 9rem;
-  padding: 0 0 4rem 0;
 }
 
 body {
@@ -38,7 +31,8 @@ img {
   height: auto;
   display: block;
 }
-/* End basic Styles */
+
+/* End Basic Styles */
 
 /* Begin Nav Styles */
 .nav-bar {
@@ -117,6 +111,7 @@ img {
   position: fixed;
   top: 0;
   height: 8rem;
+  font-size: medium;
 }
 
 @supports (position: sticky) {
@@ -129,13 +124,15 @@ img {
 .top-nav .logo a,
 .top-nav .nav-menu a {
   color: white;
+  font-size: 80px;
 }
 
 .top-nav .nav-menu a:hover {
   border-bottom: 1px solid #fff;
 }
 
-/* Begin Hero Styles */
+/*Begin Hero Styles */
+
 .hero-box {
   display: grid;
   grid-template-columns: 1fr;
@@ -146,7 +143,6 @@ img {
   align-items: start;
   height: 100%;
   width: 100%;
-  margin-top: -8rem;
 }
 
 .hero-image-box {
@@ -164,7 +160,7 @@ img {
   position: absolute;
   top: 0;
   bottom: 0;
-  background-color: rgba(145, 73, 40, 0.4);
+  background-color: rgba(104, 104, 104, 0.4);
 }
 
 .hero-image,
@@ -174,14 +170,6 @@ img {
   height: 100%;
   object-fit: cover;
   overflow: hidden;
-}
-
-.hero-video {
-  background-color: black;
-  background-image: url("../img/ocean.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .hero-text-box {
@@ -207,7 +195,7 @@ img {
 }
 
 .portfolio-container {
-  margin: 1rem auto 0 auto;
+  margin: 1rem 1rem;
 }
 
 .portfolio-container h1 {
@@ -218,15 +206,17 @@ img {
 
 .portfolio-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(900px, 2fr));
   grid-gap: 0.5rem;
-  grid-auto-rows: 300px;
+  grid-auto-rows: 900px;
 }
 
 .gallery-item {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  position: relative;
+  text-align: left;
 }
 
 .gallery-img {
@@ -242,7 +232,8 @@ img {
 .about-container {
   display: grid;
   grid-template-columns: 1fr;
-  margin: 1rem auto 0 auto;
+  grid-auto-rows: 1000px;
+  grid-gap: 1.5rem;
 }
 
 .about-text {
@@ -275,6 +266,7 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
 /* Media Queries Below */
 
 @media (min-width: 600px) {
@@ -296,28 +288,17 @@ img {
     grid-gap: 1rem;
   }
   .about-text h1 {
-    font-size: 4rem;
     line-height: 4rem;
   }
   .about-text p {
-    font-size: 1.2rem;
     line-height: 1.6rem;
   }
   .about-social a {
     font-size: 3rem;
   }
-  .nav-bar {
-    line-height: 1.5rem;
-  }
-  .nav-menu {
-    padding: 0 1rem;
-  }
-  .nav-item {
-    flex: 1 1;
-  }
 }
 
-@media (min-width: 920px) {
+@media (min-width: 900px) {
   .hero-heading {
     font-size: 9rem;
     line-height: 9rem;
@@ -326,9 +307,7 @@ img {
     font-size: 4rem;
     line-height: 4rem;
   }
-  .portfolio-container {
-    max-width: 1400px;
-  }
+
   .portfolio-container h1 {
     font-size: 6rem;
     line-height: 6rem;
@@ -337,26 +316,12 @@ img {
     max-width: 1400px;
   }
   .about-text h1 {
-    font-size: 6rem;
     line-height: 6rem;
   }
   .about-text p {
-    font-size: 1.8rem;
     line-height: 2.1rem;
   }
   .about-social a {
     font-size: 4rem;
-  }
-  .nav-bar {
-    justify-content: space-between;
-    padding: 2rem 2rem;
-    line-height: 1rem;
-  }
-  .nav-menu {
-    width: auto;
-    justify-self: end;
-  }
-  .top-nav {
-    width: 100%;
   }
 }
